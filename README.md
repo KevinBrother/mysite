@@ -30,6 +30,6 @@ $ django-admin startproject mysite .
     python manage.py migrate
 
 
-pip install pylint-django　：vocode编程验证
-pip install bpmappers　：简化对象转成字典的操作 返回中文乱码 https://www.cnblogs.com/wf-skylark/p/9317096.html
+pip install pylint-django　：vocode编程验证  
+pip install bpmappers　：简化对象转成字典的操作 返回中文乱码 https://www.cnblogs.com/wf-skylark/p/9317096.html  
 pip install django-cors-headers　：　跨域　https://www.cnblogs.com/randomlee/p/9752705.html
