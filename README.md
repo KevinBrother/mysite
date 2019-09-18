@@ -19,6 +19,7 @@ $ django-admin startproject mysite .
 
 启动服务器运行项目  
 (venv)$ python manage.py runserver　　
+        python manage.py runserver 8080 (更改端口号)
 
 创建应用 名字为clockin
 (venv)$ python manage.py startapp clockin
@@ -32,7 +33,7 @@ $ django-admin startproject mysite .
 pip install pylint-django　：vocode编程验证  
 pip install bpmappers　：简化对象转成字典的操作 返回中文乱码 https://www.cnblogs.com/wf-skylark/p/9317096.html  
 pip install django-cors-headers　：　跨域　https://www.cnblogs.com/randomlee/p/9752705.html
-
+pip install pymysql : 连接MySQL
 
 
 mysql :  
@@ -46,3 +47,25 @@ python manage.py migrate　（迁移默认Django自带的数据模型）
 
 python manage.py makemigrations clockin　生成模型的迁移文件  
 python manage.py migrate 迁移  
+
+
+
+python manage.py createsuperuser : 创建管理员用户
+
+
+INSERT INTO defaulttype  (name)  VALUES  ('其他'),('阅读写作'),('教育教养'),('学习考试');
+
+
+
+
+
+Django那么多view，都写在同一个文件里面吗？
+
+分不了的话views不一定是views.py, 也可以是
+views/__init__.py 
+"""
+from .a import *
+from .b import *
+"""
+views/a.py
+views/b.py
