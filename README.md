@@ -26,10 +26,23 @@ $ django-admin startproject mysite .
 退出虚拟环境  
 (venv)$ deactive　　
 
-    python manage.py makemigrations vote
-    python manage.py migrate
+ 
 
 
 pip install pylint-django　：vocode编程验证  
 pip install bpmappers　：简化对象转成字典的操作 返回中文乱码 https://www.cnblogs.com/wf-skylark/p/9317096.html  
 pip install django-cors-headers　：　跨域　https://www.cnblogs.com/randomlee/p/9752705.html
+
+
+
+mysql :  
+    sudo -i 
+    mysql  
+    create database clockin default charset utf8;  
+    grant all privileges on clockin.* to office@localhost identified by 'qwer1234';  
+
+迁移：根据模型自动生成关系数据库中的二维表　　
+python manage.py migrate　（迁移默认Django自带的数据模型）  
+
+python manage.py makemigrations clockin　生成模型的迁移文件  
+python manage.py migrate 迁移  
