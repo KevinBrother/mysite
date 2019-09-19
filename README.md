@@ -31,7 +31,12 @@ $ django-admin startproject mysite .
 
 
 pip install pylint-django　：vocode编程验证  
-pip install bpmappers　：简化对象转成字典的操作 返回中文乱码 https://www.cnblogs.com/wf-skylark/p/9317096.html  
+并添加配置 
+"python.linting.pylintArgs": [
+    "--load-plugins=pylint_django",
+]
+
+pip install bpmappers　：简化对象转成字典的操作   返回中文乱码 https://www.cnblogs.com/wf-skylark/p/9317096.html    json_dumps_params={'ensure_ascii':False})
 pip install django-cors-headers　：　跨域　https://www.cnblogs.com/randomlee/p/9752705.html
 pip install pymysql : 连接MySQL
 
@@ -69,3 +74,20 @@ from .b import *
 """
 views/a.py
 views/b.py
+
+
+增
+models.UserInfo.objects.create(user='yangmv',pwd='123456')
+或者
+obj = models.UserInfo(user='yangmv',pwd='123456')
+obj.save()
+或者
+dic = {'user':'yangmv','pwd':'123456'}
+models.UserInfo.objects.create(**dic)
+
+查
+models.UserInfo.objects.all()
+models.UserInfo.objects.all().values('user')    #只取user列
+models.UserInfo.objects.all().values_list('id','user')    #取出id和user列，并生成一个列表
+models.UserInfo.objects.get(id=1)
+models.UserInfo.objects.get(user='yangmv')
