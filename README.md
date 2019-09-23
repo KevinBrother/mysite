@@ -36,7 +36,8 @@ pip install pylint-django　：vocode编程验证
     "--load-plugins=pylint_django",
 ]
 
-pip install bpmappers　：简化对象转成字典的操作   返回中文乱码 https://www.cnblogs.com/wf-skylark/p/9317096.html    json_dumps_params={'ensure_ascii':False})
+pip install bpmappers　：简化对象转成字典的操作   
+返回中文乱码 https://www.cnblogs.com/wf-skylark/p/9317096.html    json_dumps_params={'ensure_ascii':False})
 pip install django-cors-headers　：　跨域　https://www.cnblogs.com/randomlee/p/9752705.html
 pip install pymysql : 连接MySQL
 

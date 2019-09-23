@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-from django.http import HttpResponse, JsonResponse
+from django.http import JsonResponse,  HttpResponse
 import json
 from .models import *
 from django.core import serializers
@@ -34,10 +34,11 @@ def addRecord(request):
 def getDefType(request):
     "获取默认的打卡类型"
     typeList = DefaultType.objects.all()
+    
     json_data = serializers.serialize('json', typeList)
     json_data = json.loads(json_data)
 
     print(json_data)
 
-    return JsonResponse(json_data, safe=False)
+    return JsonResponse(json_data, json_dumps_params={'ensure_ascii':False}, safe=False)
     
