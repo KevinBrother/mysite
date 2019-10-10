@@ -25,7 +25,7 @@ SECRET_KEY = ')ku00*0-(qhe(e0++!&-v2*o+6i8tk#m$24@8bfjcbg%aa_hqy'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,8 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'clockin'
+    'clockin', 
+    'werkzeug_debugger_runserver', # SSL 支持 HTTPS
+    'django_extensions',   # SSL 支持 HTTPS
 ]
+
+# SECURE_SSL_REDIRECT = True  # SSL 支持 HTTPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -124,3 +128,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+

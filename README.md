@@ -21,6 +21,9 @@ $ django-admin startproject mysite .
 (venv)$ python manage.py runserver　　
         python manage.py runserver 8080 (更改端口号)
 
+        启动Https协议命令
+        python manage.py runserver_plus --cert server.crt 127.0.0.1:8000
+
 创建应用 名字为clockin
 (venv)$ python manage.py startapp clockin
 
